@@ -1,7 +1,7 @@
 describe('direct object tests (persistent)', function() {
     // get the first section by id
     var testEl = document.getElementById('test'),
-        tweaker = classup(testEl);
+        tweaker = classtweak(testEl);
     
     // reset the clasname
     testEl.className = '';
@@ -21,7 +21,7 @@ describe('direct object tests (persistent)', function() {
         tweaker('!bounce');
         expect(testEl.className).toEqual('bounce');
 
-        classup(testEl, '!bounce');
+        classtweak(testEl, '!bounce');
         expect(testEl.className).toEqual('');
     });
 

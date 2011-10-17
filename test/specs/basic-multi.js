@@ -15,15 +15,15 @@ describe('multiple element tweaks', function() {
     });
     
     it('can add a class to multiple elements', function() {
-        classup(elements, '+bounce');
+        classtweak(elements, '+bounce');
         expect(elements[0].className).toEqual('bounce');
         expect(elements[1].className).toEqual('bounce');
         expect(elements[2].className).toEqual('bounce');
     });
 
     it('can remove a class to multiple elements', function() {
-        classup(elements, '+bounce');
-        classup(elements, '-bounce');
+        classtweak(elements, '+bounce');
+        classtweak(elements, '-bounce');
         expect(elements[0].className).toEqual('');
         expect(elements[1].className).toEqual('');
         expect(elements[2].className).toEqual('');

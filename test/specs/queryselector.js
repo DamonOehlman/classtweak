@@ -15,29 +15,29 @@ describe('query selector tweaks', function() {
     });
     
     it('can add a class to a targeted element', function() {
-        classup('#test', '+bounce');
+        classtweak('#test', '+bounce');
         expect(elements[0].className).toEqual('bounce');
         expect(elements[1].className).toEqual('');
         expect(elements[2].className).toEqual('');
     });
     
     it('can add a class all sections', function() {
-        classup('section', '+bounce');
+        classtweak('section', '+bounce');
         expect(elements[0].className).toEqual('bounce');
         expect(elements[1].className).toEqual('bounce');
         expect(elements[2].className).toEqual('bounce');
     });
     
     it('can add a class to sections with data-route attriute', function() {
-        classup('section[data-route]', '+bounce');
+        classtweak('section[data-route]', '+bounce');
         expect(elements[0].className).toEqual('');
         expect(elements[1].className).toEqual('bounce');
         expect(elements[2].className).toEqual('bounce');
     });
     
     it('can add a class to certain elements and then toggle on all', function() {
-        classup('section[data-route]', '+bounce');
-        classup('section', '!bounce');
+        classtweak('section[data-route]', '+bounce');
+        classtweak('section', '!bounce');
         expect(elements[0].className).toEqual('bounce');
         expect(elements[1].className).toEqual('');
         expect(elements[2].className).toEqual('');
