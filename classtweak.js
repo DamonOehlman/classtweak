@@ -36,16 +36,37 @@ function classtweak(elements, initAction) {
             // iterate through the actions and apply the tweaks
             for (ii = actions.length; ii--; ) {
                 // get the action instruction
-                var instruction = actions[ii].slice(0, 1),
-                    className = actions[ii].slice(1),
+                var action = actions[ii],
+                    instruction = action.slice(0, 1),
+                    lastChar = action.slice(-1),
+                    className = action.slice(1),
                     handler = instructionHandlers[instruction],
+                    dotSyntax = instruction == '.' || lastChar == '.',
                     classIdx, found = -1;
-
+                    
                 // if the instruction handler is not found, then default to +
                 // also, use the full action text
                 if (! handler) {
-                    handler = instructionHandlers['+'];
-                    className = actions[ii];
+                    // if we have the dot syntax then do more parsing
+                    if (dotSyntax) {
+                        // update the handler
+                        handler = instructionHandlers[
+                            instruction == '.' && lastChar == '.' ? '!' : 
+                                instruction == '.' ? '+' : '-'
+                        ];
+                        
+                        // update the classname
+                        className = action.slice(
+                            instruction == '.' ? 1 : 0, 
+                            lastChar == '.' ? -1 : undefined
+                        );
+                    }
+                    // otherwise, just fall back to the add handler
+                    else {
+                        // if the last character is a dot, push to the dot handler, otherwise +
+                        handler = instructionHandlers['+'];
+                        className = actions[ii];
+                    } // if..else
                 } // if
                 
                 // iterate through the active classes and update the found state
