@@ -42,4 +42,12 @@ describe('query selector tweaks', function() {
         expect(elements[1].className).toEqual('');
         expect(elements[2].className).toEqual('');
     });
+    
+    it('can handle string objects', function() {
+        classtweak('section[data-route]', '+bounce');
+        classtweak(new String('section'), '!bounce');
+        expect(elements[0].className).toEqual('bounce');
+        expect(elements[1].className).toEqual('');
+        expect(elements[2].className).toEqual('');
+    });
 });

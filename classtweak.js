@@ -66,7 +66,7 @@ function classtweak(elements, initAction) {
     } // tweak
     
     // check the elements
-    if (typeof elements == 'string') {
+    if (typeof elements == 'string' || elements instanceof String) {
         elements = document.querySelectorAll(elements);
     }
     else if (! Array.isArray(elements)) {
