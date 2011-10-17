@@ -46,6 +46,7 @@ tweaker('!bounce');
 
 // add the bounce class and toggle the slide class
 tweaker('+bounce !slide');
+```
 
 ### Using the Query Selector API
 
