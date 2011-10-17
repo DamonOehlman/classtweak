@@ -57,3 +57,22 @@ You can also work with selectors as per the maturing [Selectors API](http://www.
 classtweak('section', '+bounce');
 ```
 
+## Alternative Modification Syntax
+
+As an option, I've also added an alternative modification syntax based on some feedback I received:
+
+```js
+var el = document.getElementById('test');
+
+// add class 'bounce'
+classtweak(el, '.bounce');
+
+// remove class 'bounce'
+classtweak(el, 'bounce.');
+
+// toggle class 'bounce
+classtweak(el, '.bounce.');
+
+// add class 'bounce' and toggle class 'slide'
+classtweak(el, '.bounce .slide.');
+```
