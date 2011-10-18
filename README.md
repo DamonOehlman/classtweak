@@ -57,6 +57,15 @@ You can also work with selectors as per the maturing [Selectors API](http://www.
 classtweak('section', '+bounce');
 ```
 
+By default, this is scoped at the `document` level but can this can be overriden by supplying a third parameter for the HTML element that's subtree will be searched:
+
+```js
+var testNode = document.getElementById('test');
+
+// add the class 'bounce' to any sections that are children of the test node
+classtweak('section', '+bounce', testNode);
+```
+
 ## Alternative Modification Syntax
 
 As an option, I've also added an alternative modification syntax based on some feedback I received:
