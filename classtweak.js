@@ -1,4 +1,4 @@
-function classtweak(elements, initAction) {
+function classtweak(elements, initAction, scope) {
 
     // internals
     var reSpaces = /[\s\,]+/,
@@ -88,7 +88,7 @@ function classtweak(elements, initAction) {
     
     // check the elements
     if (typeof elements == 'string' || elements instanceof String) {
-        elements = document.querySelectorAll(elements);
+        elements = (scope || document).querySelectorAll(elements);
     }
     else if (! Array.isArray(elements)) {
         elements = [elements];
