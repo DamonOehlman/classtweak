@@ -84,6 +84,8 @@ function classtweak(elements, initAction, scope) {
             // update the element classname
             element.className = activeClasses.join(' ');
         } // for
+        
+        return tweak;
     } // tweak
     
     // check the elements
@@ -100,5 +102,5 @@ function classtweak(elements, initAction, scope) {
     } // if
     
     // return the tweak
-    return tweak;
+    return initAction ? classtweak : tweak;
 } // classtweak

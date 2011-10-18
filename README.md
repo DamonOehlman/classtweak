@@ -85,3 +85,27 @@ classtweak(el, '.bounce.');
 // add class 'bounce' and toggle class 'slide'
 classtweak(el, '.bounce .slide.');
 ```
+
+## Chaining
+
+I've also added chaining to classtweak so you can be really, really terse.  The behaviour of chaining is sensitive to the context of the `classtweak` call though so be aware of that.
+
+If you want to tweak classes on a number of different elements with different class modifications you would call classtweak like:
+
+```js
+classtweak
+	('section', '-active')
+	('section[data-route="/"]', '+active');
+```
+
+Alternatively if you have created a tweaker on a set of target elements, you can chain those calls too:
+
+```js
+classtweak('section')('+slide')('+bounce');
+```
+
+In reality, though, this probably has limited value as you can achieve the same by simply passing through a space delimited string of all the class tweaks:
+
+```js
+classtweak('section')('+slide +bounce');
+```
