@@ -1,4 +1,8 @@
 function classtweak(elements, initAction, scope) {
+    // if elements is not defined, then return
+    if (! elements) {
+        return undefined;
+    } // if
 
     // internals
     var reSpaces = /[\s\,]+/,
