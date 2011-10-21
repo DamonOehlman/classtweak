@@ -96,7 +96,9 @@ function classtweak(elements, initAction, scope) {
     if (typeof elements == 'string' || elements instanceof String) {
         elements = (scope || document).querySelectorAll(elements);
     }
-    else if (! Array.isArray(elements)) {
+    // if we don't have a splice function, then we don't have an array
+    // make it one
+    else if (! elements.splice) {
         elements = [elements];
     } // if..else
 
