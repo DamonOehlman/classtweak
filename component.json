@@ -6,8 +6,7 @@
   "keywords": [
     "DOM"
   ],
-  "main": "classtweak.js",
   "scripts": [
-    "classtweak.js"
+    "index.js"
   ]
 }

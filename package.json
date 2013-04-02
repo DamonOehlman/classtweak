@@ -1,0 +1,21 @@
+{
+  "name": "classtweak",
+  "description": "DOM Element Class Tweaking (similar to classList native API)",
+  "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+  "tags": [
+    "DOM",
+    "browser"
+  ],
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DamonOehlman/classtweak.git"
+  },
+  "bugs": {
+    "url": "http://github.com/DamonOehlman/classtweak/issues"
+  },
+  "contributors": []
+}
