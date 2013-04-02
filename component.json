@@ -2,7 +2,7 @@
   "name": "classtweak",
   "repo": "DamonOehlman/classtweak",
   "description": "DOM Element Class Tweaking (similar to classList native API)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "DOM"
   ],
